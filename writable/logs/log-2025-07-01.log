@@ -1,0 +1,234 @@
+ERROR - 2025-07-01 11:26:07 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'sea_apps_db', 3306, '', 0)
+#1 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\BaseModel.php(717): CodeIgniter\Model->doFirst()
+#6 C:\NGODING\SEA-Apps\app\Models\UserModel.php(76): CodeIgniter\BaseModel->first()
+#7 C:\NGODING\SEA-Apps\app\Controllers\WebController.php(298): App\Models\UserModel->findByEmail('admin@seaapps.c...')
+#8 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\WebController->processLogin()
+#9 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WebController))
+#10 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\NGODING\SEA-Apps\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('C:\\NGODING\\SEA-...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\BaseModel.php(717): CodeIgniter\Model->doFirst()
+#5 C:\NGODING\SEA-Apps\app\Models\UserModel.php(76): CodeIgniter\BaseModel->first()
+#6 C:\NGODING\SEA-Apps\app\Controllers\WebController.php(298): App\Models\UserModel->findByEmail('admin@seaapps.c...')
+#7 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\WebController->processLogin()
+#8 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WebController))
+#9 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\NGODING\SEA-Apps\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('C:\\NGODING\\SEA-...')
+#14 {main}
+ERROR - 2025-07-01 11:26:07 --> Login error: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+ERROR - 2025-07-01 11:26:23 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'sea_apps_db', 3306, '', 0)
+#1 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\BaseModel.php(717): CodeIgniter\Model->doFirst()
+#6 C:\NGODING\SEA-Apps\app\Models\UserModel.php(76): CodeIgniter\BaseModel->first()
+#7 C:\NGODING\SEA-Apps\app\Controllers\WebController.php(298): App\Models\UserModel->findByEmail('admin@seaapps.c...')
+#8 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\WebController->processLogin()
+#9 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WebController))
+#10 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\NGODING\SEA-Apps\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('C:\\NGODING\\SEA-...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\BaseModel.php(717): CodeIgniter\Model->doFirst()
+#5 C:\NGODING\SEA-Apps\app\Models\UserModel.php(76): CodeIgniter\BaseModel->first()
+#6 C:\NGODING\SEA-Apps\app\Controllers\WebController.php(298): App\Models\UserModel->findByEmail('admin@seaapps.c...')
+#7 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\WebController->processLogin()
+#8 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WebController))
+#9 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\NGODING\SEA-Apps\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('C:\\NGODING\\SEA-...')
+#14 {main}
+ERROR - 2025-07-01 11:26:23 --> Login error: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+ERROR - 2025-07-01 11:29:56 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'sea_apps_db', 3306, '', 0)
+#1 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\BaseModel.php(717): CodeIgniter\Model->doFirst()
+#6 C:\NGODING\SEA-Apps\app\Models\UserModel.php(76): CodeIgniter\BaseModel->first()
+#7 C:\NGODING\SEA-Apps\app\Controllers\LoginDebugController.php(27): App\Models\UserModel->findByEmail('admin@seaapps.c...')
+#8 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\LoginDebugController->testLogin()
+#9 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginDebugController))
+#10 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\NGODING\SEA-Apps\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('C:\\NGODING\\SEA-...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\BaseModel.php(717): CodeIgniter\Model->doFirst()
+#5 C:\NGODING\SEA-Apps\app\Models\UserModel.php(76): CodeIgniter\BaseModel->first()
+#6 C:\NGODING\SEA-Apps\app\Controllers\LoginDebugController.php(27): App\Models\UserModel->findByEmail('admin@seaapps.c...')
+#7 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\LoginDebugController->testLogin()
+#8 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginDebugController))
+#9 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\NGODING\SEA-Apps\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('C:\\NGODING\\SEA-...')
+#14 {main}
+ERROR - 2025-07-01 11:32:46 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'sea_apps_db', 3306, '', 0)
+#1 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\BaseModel.php(717): CodeIgniter\Model->doFirst()
+#6 C:\NGODING\SEA-Apps\app\Models\UserModel.php(76): CodeIgniter\BaseModel->first()
+#7 C:\NGODING\SEA-Apps\app\Controllers\WebController.php(300): App\Models\UserModel->findByEmail('admin@seaapps.c...')
+#8 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\WebController->processLogin()
+#9 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WebController))
+#10 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\NGODING\SEA-Apps\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('C:\\NGODING\\SEA-...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\BaseModel.php(717): CodeIgniter\Model->doFirst()
+#5 C:\NGODING\SEA-Apps\app\Models\UserModel.php(76): CodeIgniter\BaseModel->first()
+#6 C:\NGODING\SEA-Apps\app\Controllers\WebController.php(300): App\Models\UserModel->findByEmail('admin@seaapps.c...')
+#7 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\WebController->processLogin()
+#8 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WebController))
+#9 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\NGODING\SEA-Apps\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('C:\\NGODING\\SEA-...')
+#14 {main}
+ERROR - 2025-07-01 11:32:46 --> Login error: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+ERROR - 2025-07-01 11:32:46 --> Stack trace: #0 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\BaseModel.php(717): CodeIgniter\Model->doFirst()
+#4 C:\NGODING\SEA-Apps\app\Models\UserModel.php(76): CodeIgniter\BaseModel->first()
+#5 C:\NGODING\SEA-Apps\app\Controllers\WebController.php(300): App\Models\UserModel->findByEmail('admin@seaapps.c...')
+#6 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\WebController->processLogin()
+#7 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WebController))
+#8 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\NGODING\SEA-Apps\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('C:\\NGODING\\SEA-...')
+#13 {main}
+ERROR - 2025-07-01 11:32:58 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'sea_apps_db', 3306, '', 0)
+#1 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\BaseModel.php(717): CodeIgniter\Model->doFirst()
+#6 C:\NGODING\SEA-Apps\app\Models\UserModel.php(76): CodeIgniter\BaseModel->first()
+#7 C:\NGODING\SEA-Apps\app\Controllers\LoginDebugController.php(27): App\Models\UserModel->findByEmail('admin@seaapps.c...')
+#8 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\LoginDebugController->testLogin()
+#9 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginDebugController))
+#10 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\NGODING\SEA-Apps\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('C:\\NGODING\\SEA-...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\BaseModel.php(717): CodeIgniter\Model->doFirst()
+#5 C:\NGODING\SEA-Apps\app\Models\UserModel.php(76): CodeIgniter\BaseModel->first()
+#6 C:\NGODING\SEA-Apps\app\Controllers\LoginDebugController.php(27): App\Models\UserModel->findByEmail('admin@seaapps.c...')
+#7 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\LoginDebugController->testLogin()
+#8 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginDebugController))
+#9 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\NGODING\SEA-Apps\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('C:\\NGODING\\SEA-...')
+#14 {main}
+ERROR - 2025-07-01 13:25:49 --> Validation errors: {"address":"The address field must be at least 10 characters in length."}
+ERROR - 2025-07-01 13:26:16 --> mysqli_sql_exception: CONSTRAINT `subscriptions.delivery_days` failed for `sea_apps_db`.`subscriptions` in C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `su...', 0)
+#1 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `su...')
+#2 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `su...')
+#3 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `su...', Array, false)
+#4 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\BaseModel.php(843): CodeIgniter\Model->doInsert(Array)
+#6 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\NGODING\SEA-Apps\app\Controllers\WebController.php(428): CodeIgniter\Model->insert(Array)
+#8 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\WebController->createSubscription()
+#9 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WebController))
+#10 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\NGODING\SEA-Apps\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\NGODING\SEA-Apps\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('C:\\NGODING\\SEA-...')
+#15 {main}
+ERROR - 2025-07-01 13:26:16 --> Create subscription error: CONSTRAINT `subscriptions.delivery_days` failed for `sea_apps_db`.`subscriptions`
+ERROR - 2025-07-01 14:47:39 --> Get contact messages error: Call to undefined method App\Models\ContactMessageModel::getPaginated
+ERROR - 2025-07-01 14:47:54 --> Get subscriptions error: Call to undefined method App\Models\SubscriptionModel::getPaginated
+ERROR - 2025-07-01 14:49:54 --> Get subscriptions error: Call to undefined method App\Models\SubscriptionModel::getPaginated
+ERROR - 2025-07-01 14:49:56 --> Get contact messages error: Call to undefined method App\Models\ContactMessageModel::getPaginated
+ERROR - 2025-07-01 14:57:25 --> Get subscriptions error: Call to undefined method App\Models\SubscriptionModel::getPaginated
+ERROR - 2025-07-01 14:57:28 --> Get contact messages error: Call to undefined method App\Models\ContactMessageModel::getPaginated
+ERROR - 2025-07-01 14:57:49 --> Get contact messages error: Call to undefined method App\Models\ContactMessageModel::getPaginated
+ERROR - 2025-07-01 15:00:32 --> Get subscriptions error: Call to undefined method App\Models\SubscriptionModel::getPaginated
+ERROR - 2025-07-01 15:00:32 --> Get contact messages error: Call to undefined method App\Models\ContactMessageModel::getPaginated
+ERROR - 2025-07-01 15:40:21 --> Failed to insert contact message
+ERROR - 2025-07-01 15:40:29 --> Failed to insert contact message
+ERROR - 2025-07-01 15:41:07 --> Failed to insert contact message
+ERROR - 2025-07-01 15:42:58 --> Create contact message error: Failed to parse JSON string. Error: Syntax error
+ERROR - 2025-07-01 15:45:09 --> Create contact message error: Failed to parse JSON string. Error: Syntax error
