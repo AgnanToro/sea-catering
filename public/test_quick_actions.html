@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Quick Actions - SEA Catering</title>
+</head>
+<body>
+    <h2>Manual Test untuk Quick Actions</h2>
+    
+    <h3>Step 1: Login sebagai Admin</h3>
+    <p>Buka: <a href="http://localhost:8080/login" target="_blank">http://localhost:8080/login</a></p>
+    <p>Email: admin@seaapps.com</p>
+    <p>Password: Admin123!</p>
+    
+    <h3>Step 2: Akses Admin Dashboard</h3>
+    <p>Setelah login, buka: <a href="http://localhost:8080/admin/dashboard" target="_blank">http://localhost:8080/admin/dashboard</a></p>
+    
+    <h3>Step 3: Test Quick Actions</h3>
+    <ol>
+        <li><strong>View All Subscriptions</strong> - Klik tombol, lihat modal dengan semua subscription</li>
+        <li><strong>Manage Contacts</strong> - Klik tombol, lihat modal dengan semua contact messages</li>
+        <li><strong>Export Data</strong> - Klik tombol, download file CSV</li>
+        <li><strong>Generate Report</strong> - Klik tombol, download file report</li>
+    </ol>
+    
+    <h3>Step 4: Check Browser Console</h3>
+    <p>Buka Developer Tools (F12) dan lihat tab Console untuk debug messages</p>
+    
+    <h3>Debug Endpoints</h3>
+    <ul>
+        <li><a href="http://localhost:8080/api/subscriptions" target="_blank">API Subscriptions</a></li>
+        <li><a href="http://localhost:8080/api/contact" target="_blank">API Contacts</a></li>
+        <li><a href="http://localhost:8080/admin/export" target="_blank">Export Data</a> (perlu login)</li>
+    </ul>
+    
+    <script>
+        function testQuickActions() {
+            console.log('Testing Quick Actions...');
+            
+            // Test API endpoints
+            fetch('/api/subscriptions')
+                .then(response => response.json())
+                .then(data => console.log('Subscriptions API:', data))
+                .catch(error => console.error('Subscriptions API Error:', error));
+                
+            fetch('/api/contact')
+                .then(response => response.json())
+                .then(data => console.log('Contact API:', data))
+                .catch(error => console.error('Contact API Error:', error));
+        }
+        
+        console.log('Quick Actions Test Page Loaded');
+        console.log('Call testQuickActions() to run API tests');
+    </script>
+</body>
+</html>

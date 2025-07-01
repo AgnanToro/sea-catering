@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Test Quick Actions - SEA Catering</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <div x-data="finalTest()" class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold text-gray-900 mb-8">Final Test - Quick Actions SEA Catering</h1>
+        
+        <!-- Login Test -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-xl font-semibold text-gray-900 mb-4">Step 1: Set Admin Session</h2>
+            <button
+                @click="setAdminSession()"
+                class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+            >
+                <i class="fas fa-user-shield mr-2"></i>
+                Set Admin Session & Go to Dashboard
+            </button>
+            <p class="text-sm text-gray-600 mt-2">Atau login manual: admin@seaapps.com / Admin123!</p>
+        </div>
+
+        <!-- API Test -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-xl font-semibold text-gray-900 mb-4">Step 2: Test All API Endpoints</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <button
+                    @click="testSubscriptionsAPI()"
+                    class="bg-teal-600 hover:bg-teal-700 text-white px-4 py-3 rounded-lg font-medium transition-colors"
+                >
+                    <i class="fas fa-clipboard-list mr-2"></i>
+                    Test Subscriptions API
+                </button>
+                
+                <button
+                    @click="testContactsAPI()"
+                    class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg font-medium transition-colors"
+                >
+                    <i class="fas fa-envelope mr-2"></i>
+                    Test Contacts API
+                </button>
+                
+                <button
+                    @click="testExportAPI()"
+                    class="bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-lg font-medium transition-colors"
+                >
+                    <i class="fas fa-download mr-2"></i>
+                    Test Export API
+                </button>
+                
+                <button
+                    @click="testReportAPI()"
+                    class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-3 rounded-lg font-medium transition-colors"
+                >
+                    <i class="fas fa-chart-bar mr-2"></i>
+                    Test Report API
+                </button>
+            </div>
+        </div>
+
+        <!-- Quick Actions Test -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-xl font-semibold text-gray-900 mb-4">Step 3: Test Quick Actions Functions</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <button
+                    @click="testLoadAllSubscriptions()"
+                    class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-3 rounded-lg font-medium transition-colors"
+                >
+                    <i class="fas fa-list mr-2"></i>
+                    Load All Subscriptions
+                </button>
+                
+                <button
+                    @click="testLoadContacts()"
+                    class="bg-cyan-600 hover:bg-cyan-700 text-white px-4 py-3 rounded-lg font-medium transition-colors"
+                >
+                    <i class="fas fa-address-book mr-2"></i>
+                    Load Contacts
+                </button>
+                
+                <button
+                    @click="testExportData()"
+                    class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-3 rounded-lg font-medium transition-colors"
+                >
+                    <i class="fas fa-file-export mr-2"></i>
+                    Export Data
+                </button>
+                
+                <button
+                    @click="testGenerateReport()"
+                    class="bg-violet-600 hover:bg-violet-700 text-white px-4 py-3 rounded-lg font-medium transition-colors"
+                >
+                    <i class="fas fa-file-pdf mr-2"></i>
+                    Generate Report
+                </button>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">Test Results</h3>
+            <div class="space-y-2" x-show="Object.keys(results).length > 0">
+                <template x-for="(result, key) in results" :key="key">
+                    <div class="p-3 rounded border" 
+                         :class="result.success ? 'bg-green-50 border-green-200' : 'bg-red-50 border-red-200'">
+                        <strong x-text="key"></strong>: <span x-text="result.message"></span>
+                        <div x-show="result.data" class="text-xs text-gray-600 mt-1" x-text="result.data"></div>
+                    </div>
+                </template>
+            </div>
+            <div x-show="Object.keys(results).length === 0" class="text-gray-500 italic">
+                No tests run yet. Click buttons above to start testing.
+            </div>
+        </div>
+
+        <!-- Modals for Testing -->
+        <div x-show="showSubscriptionsModal" x-cloak class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+            <div class="bg-white rounded-xl max-w-4xl w-full max-h-screen overflow-y-auto">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-semibold text-gray-900">All Subscriptions</h3>
+                        <button @click="showSubscriptionsModal = false" class="text-gray-400 hover:text-gray-600">
+                            <i class="fas fa-times text-xl"></i>
+                        </button>
+                    </div>
+                    <div class="space-y-2">
+                        <template x-for="sub in allSubscriptions" :key="sub.id">
+                            <div class="border border-gray-200 rounded-lg p-3">
+                                <div class="flex justify-between">
+                                    <div>
+                                        <strong x-text="sub.user_name || 'Unknown User'"></strong>
+                                        <span class="text-gray-500" x-text="'(' + (sub.user_email || 'No email') + ')'"></span>
+                                    </div>
+                                    <span class="text-sm text-gray-600" x-text="'Paket ' + sub.plan"></span>
+                                </div>
+                                <div class="text-sm text-gray-500 mt-1">
+                                    Status: <span x-text="sub.status"></span> | 
+                                    Price: <span x-text="'Rp ' + (sub.price || 0).toLocaleString('id-ID')"></span>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div x-show="showContactsModal" x-cloak class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+            <div class="bg-white rounded-xl max-w-4xl w-full max-h-screen overflow-y-auto">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-semibold text-gray-900">All Contacts</h3>
+                        <button @click="showContactsModal = false" class="text-gray-400 hover:text-gray-600">
+                            <i class="fas fa-times text-xl"></i>
+                        </button>
+                    </div>
+                    <div class="space-y-2">
+                        <template x-for="contact in allContacts" :key="contact.id">
+                            <div class="border border-gray-200 rounded-lg p-3">
+                                <div class="flex justify-between">
+                                    <strong x-text="contact.name"></strong>
+                                    <span class="text-xs text-gray-400" x-text="new Date(contact.created_at).toLocaleDateString('id-ID')"></span>
+                                </div>
+                                <div class="text-sm text-gray-600" x-text="contact.email"></div>
+                                <div class="text-sm text-gray-700 mt-1" x-text="contact.message"></div>
+                            </div>
+                        </template>
+                        <div x-show="allContacts.length === 0" class="text-gray-500 italic">No contacts found</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function finalTest() {
+            return {
+                results: {},
+                showSubscriptionsModal: false,
+                showContactsModal: false,
+                allSubscriptions: [],
+                allContacts: [],
+
+                setAdminSession() {
+                    window.location.href = '/test/admin-login';
+                },
+
+                addResult(key, success, message, data = null) {
+                    this.results[key] = {
+                        success: success,
+                        message: message,
+                        data: data
+                    };
+                },
+
+                async testSubscriptionsAPI() {
+                    try {
+                        const response = await fetch('/api/subscriptions');
+                        if (response.ok) {
+                            const data = await response.json();
+                            const count = data.data ? data.data.length : (Array.isArray(data) ? data.length : 0);
+                            this.addResult('Subscriptions API', true, `Found ${count} subscriptions`, JSON.stringify(data).substring(0, 100));
+                        } else {
+                            this.addResult('Subscriptions API', false, `Error: ${response.status}`);
+                        }
+                    } catch (error) {
+                        this.addResult('Subscriptions API', false, `Error: ${error.message}`);
+                    }
+                },
+
+                async testContactsAPI() {
+                    try {
+                        const response = await fetch('/api/contact');
+                        if (response.ok) {
+                            const data = await response.json();
+                            const count = data.data ? data.data.length : (Array.isArray(data) ? data.length : 0);
+                            this.addResult('Contacts API', true, `Found ${count} contacts`, JSON.stringify(data).substring(0, 100));
+                        } else {
+                            this.addResult('Contacts API', false, `Error: ${response.status}`);
+                        }
+                    } catch (error) {
+                        this.addResult('Contacts API', false, `Error: ${error.message}`);
+                    }
+                },
+
+                async testExportAPI() {
+                    try {
+                        const response = await fetch('/admin/export');
+                        if (response.ok) {
+                            const blob = await response.blob();
+                            this.addResult('Export API', true, `Export successful (${blob.size} bytes)`);
+                        } else {
+                            this.addResult('Export API', false, `Error: ${response.status}`);
+                        }
+                    } catch (error) {
+                        this.addResult('Export API', false, `Error: ${error.message}`);
+                    }
+                },
+
+                async testReportAPI() {
+                    try {
+                        const response = await fetch('/admin/report', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                start_date: '2025-06-01',
+                                end_date: '2025-07-01',
+                                type: 'comprehensive'
+                            })
+                        });
+                        if (response.ok) {
+                            const data = await response.json();
+                            if (data.success) {
+                                this.addResult('Report API', true, `Report generated: ${data.filename}`);
+                            } else {
+                                this.addResult('Report API', false, `Error: ${data.message}`);
+                            }
+                        } else {
+                            this.addResult('Report API', false, `Error: ${response.status}`);
+                        }
+                    } catch (error) {
+                        this.addResult('Report API', false, `Error: ${error.message}`);
+                    }
+                },
+
+                async testLoadAllSubscriptions() {
+                    try {
+                        const response = await fetch('/api/subscriptions');
+                        if (response.ok) {
+                            const result = await response.json();
+                            this.allSubscriptions = result.data || result;
+                            this.showSubscriptionsModal = true;
+                            this.addResult('Load All Subscriptions', true, `Modal opened with ${this.allSubscriptions.length} items`);
+                        } else {
+                            this.addResult('Load All Subscriptions', false, `API Error: ${response.status}`);
+                        }
+                    } catch (error) {
+                        this.addResult('Load All Subscriptions', false, `Error: ${error.message}`);
+                    }
+                },
+
+                async testLoadContacts() {
+                    try {
+                        const response = await fetch('/api/contact');
+                        if (response.ok) {
+                            const result = await response.json();
+                            this.allContacts = result.data || result;
+                            this.showContactsModal = true;
+                            this.addResult('Load Contacts', true, `Modal opened with ${this.allContacts.length} items`);
+                        } else {
+                            this.addResult('Load Contacts', false, `API Error: ${response.status}`);
+                        }
+                    } catch (error) {
+                        this.addResult('Load Contacts', false, `Error: ${error.message}`);
+                    }
+                },
+
+                async testExportData() {
+                    try {
+                        const response = await fetch('/admin/export');
+                        if (response.ok) {
+                            const blob = await response.blob();
+                            const url = window.URL.createObjectURL(blob);
+                            const a = document.createElement('a');
+                            a.href = url;
+                            a.download = `test_export_${new Date().toISOString().split('T')[0]}.csv`;
+                            document.body.appendChild(a);
+                            a.click();
+                            document.body.removeChild(a);
+                            window.URL.revokeObjectURL(url);
+                            this.addResult('Export Data', true, `File downloaded (${blob.size} bytes)`);
+                        } else {
+                            this.addResult('Export Data', false, `Export Error: ${response.status}`);
+                        }
+                    } catch (error) {
+                        this.addResult('Export Data', false, `Error: ${error.message}`);
+                    }
+                },
+
+                async testGenerateReport() {
+                    try {
+                        const response = await fetch('/admin/report', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                start_date: '2025-06-01',
+                                end_date: '2025-07-01',
+                                type: 'comprehensive'
+                            })
+                        });
+                        if (response.ok) {
+                            const result = await response.json();
+                            if (result.success) {
+                                // Download the report
+                                const downloadResponse = await fetch(result.download_url);
+                                if (downloadResponse.ok) {
+                                    const blob = await downloadResponse.blob();
+                                    const url = window.URL.createObjectURL(blob);
+                                    const a = document.createElement('a');
+                                    a.href = url;
+                                    a.download = result.filename;
+                                    document.body.appendChild(a);
+                                    a.click();
+                                    document.body.removeChild(a);
+                                    window.URL.revokeObjectURL(url);
+                                    this.addResult('Generate Report', true, `Report downloaded: ${result.filename}`);
+                                } else {
+                                    this.addResult('Generate Report', false, `Download failed: ${downloadResponse.status}`);
+                                }
+                            } else {
+                                this.addResult('Generate Report', false, `Report Error: ${result.message}`);
+                            }
+                        } else {
+                            this.addResult('Generate Report', false, `API Error: ${response.status}`);
+                        }
+                    } catch (error) {
+                        this.addResult('Generate Report', false, `Error: ${error.message}`);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
